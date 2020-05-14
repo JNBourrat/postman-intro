@@ -1,8 +1,10 @@
 # Variables et environnements
 
-Dans postman, les variables se comportent comme dans la majorité des langages de programmation : elles doivent être définies, sont référencées par leur nom et sont utilisées pour stocker une valeur. L'utilisation des variables minimise fortement le risque d'erreur et permet un travail plus efficace.
+Dans postman, les variables se comportent comme dans la majorité des langages de programmation : elles doivent être définies, sont référencées par un symbôle (leur nom) et sont utilisées pour stocker une valeur. Dans le cas de Postman, les variables seront toujours stockées sous forme de string qu'il faudra éventuellement parser si besoin. L'utilisation des variables minimise fortement le risque d'erreur, permet un travail plus efficace notamment dans le cadre de déploiement sur plusieurs environnements et autorise également la création de requêtes dynamiques en fonction du besoin (scénarios particuliers, tests automatisés, authentification, etc).
 
 Dans Postman, on accède à la valeur d'une variable en tapant le nom d'une variable, entouré de doubles accolades : `{{maVariable}}`. On peut utiliser cette notation dans les URLs, les paramètres, les headers, le'onglet d'authentification (onglet 'Authorization'), les corps (body) des requêtes, les headers pré-enregistrés ("presets headers") ainsi que dans les scripts de pré-requête et les tests. Il existe aussi des variables dites 'dynamiques', nous y reviendrons à la fin de ce chapitre.
+
+---
 
 ## Qu'est-ce qu'un environnement ?
 
@@ -56,15 +58,16 @@ Ajoutons la variable globale `userName` et affectons lui la valeur "Dupont" (pou
 }
 ```
 
-Par le même biais (la gestion rapide des environnements) éditons cette fois l'environnement créé au début de ce chapitre. Remarquons au passage, entourée en vert, l'affichage de la variable à portée "globale" utilisée auparavant.
+Par le même biais (la gestion rapide des environnements) éditons cette fois l'environnement créé au début de ce chapitre. 
+>*Remarquons au passage, entouré en vert, l'affichage de la variable à portée "globale" utilisée auparavant.*
 
 ![variable-scope-2.png](../images/chap.2/variable-scope-2.png)
 
-Affectez à une nouvelle variable d'environnement `userName `la valeur "Durand", lancez la requête et observez la valeur de la variable utilisée.
+Affectez à une nouvelle variable `userName ` de l'environnement `[Env A] Postman Echo` la valeur "Durand". Lancez la requête et observez la valeur de la variable utilisée.
 
 ![alt](/images/chap.2/variable-scope-3.png)
 
-Note : si vous souhaitez ne pas déclarer la variable dans un scope ou dans l'autre, il suffit de la décocher dans la liste de l'environnement.
+>*Note : si vous souhaitez ne pas déclarer la variable dans un scope ou dans l'autre, il suffit de la décocher dans la liste de l'environnement en question*
 
 S'il y a plusieurs scopes disponibles pour déclarer des variables, il y a donc autant d'utilisations spéciales et de contre-inidcations pour leur utilisation :
 
@@ -80,6 +83,8 @@ S'il y a plusieurs scopes disponibles pour déclarer des variables, il y a donc 
 
 - Les **Data variables** sont disponibles uniquement dans le cadre de l'automatisation d'une collection via l'outil Newman ou le Runner Postman. Elles sont disponibles durant toute l'itération et proviennent de fichiers externes au format CSV ou JSON.
 
+>*Note : il existe un dernier type de variable : les **variables de session** qui ne font pas partie d'un scope à proprement parler mais qui permette de conserver des valeurs en local, sans qu'elles ne soient synchronisées sur un quelconque serveur Postman. C'est très utile notamment pour des identifiants d'authentification personnels ou des clés API  payantes. Nous en parlerons plus en détail dans le chapitre sur le travail collaboratif*
+
 ![Variables-Chart.png](/images/chap.2/Variables-Chart.png)
 
-Comme indiqué sur le schéma ci-dessus, Postman expose certaines API telles que `pm.variables.set(...)` et `pm.variables.get(...)` afin d'accéder au contenu des variables depuis les scripts. Nous verrons cela dans le [prochain chapitre consacré aux scripts et aux tests](03-scripts_et_tests.md).
+Comme indiqué sur le schéma ci-dessus, Postman expose certaines API telles que `pm.variables.set(...)` et `pm.variables.get(...)` afin d'accéder au contenu des variables depuis les scripts. Nous verrons cela dans le [prochain chapitre consacré aux scripts et aux tests](03-basics-scripts_et_tests.md).

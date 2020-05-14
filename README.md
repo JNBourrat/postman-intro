@@ -21,7 +21,7 @@ Cette introduction prendra la forme de plusieurs chapitres constitués d'une pag
 - [Les différents types de variables et leur portée (scope)]()
 - [Le travail collaboratif sur une collection]()
 - [Les scripts de pré-requête]()
-- [Les tests (assertions avec [Chai](https://www.chaijs.com/api/)]()
+- [Les tests]()(assertions avec [Chai](https://www.chaijs.com/api/)
 - [Le Runner]()
 - [Regroupement (guideline) des requetes collection vs test case]()
 - [Les possibilités d'intégration de postman dans un CI/CD]()

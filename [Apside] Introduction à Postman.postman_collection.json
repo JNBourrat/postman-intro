@@ -49,16 +49,14 @@
 			"name": "Chapitre 2 - Variables et environnement",
 			"item": [
 				{
-					"name": "Première requête",
+					"name": "Requête avec une url \"variablilisée\"",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://postman-echo.com/get?entity=users&sort=username",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/get?entity=users&sort=username",
 							"host": [
-								"postman-echo",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"get"
@@ -79,6 +77,33 @@
 								}
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "Scope de la variable \"userName\"",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"companyName\": \"Apside\",\n\t\"userName\": \"{{userName}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/post",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"post"
+							]
+						},
+						"description": "Pour tester :\r\n- Décocher la variable d'environnement `userName` de l'environnement `[Env A] Postman Echo`\r\n- Déclarer une variable \"globale\" grâce à l'outil de gestion rapide des environnements en cliquant sur le symbôle de l'oeil en haut à droite de la fenêtre puis sur le bouton `Edit` en face de la section `Globals`\r\n- Affecter la valeur \"Dupont\" à une variable globale `userName`  puis enregistrer\r\n- Envoyer la requête, vérifier la valeur envoyée grâce au body de la réponse\r\n- Cocher la variable d'environnement `userName`\r\n- Envoyer la requête, vérifier la valeur envoyée grâce au body de la réponse"
 					},
 					"response": []
 				}

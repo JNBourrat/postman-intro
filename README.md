@@ -7,26 +7,26 @@ Dans une optique similaire, pour notre propre API cette fois-ci, on peut imagine
 
 Plusieurs solutions sont disponibles : [Insomnia](https://insomnia.rest/), [l'extension VSCode "REST Client"](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), [Paw](https://paw.cloud/)...
 L'une des applications les plus populaires, et celle sur laquelle nous allons nous pencher est [Postman](https://www.postman.com/downloads/).
-Elle permet de créer des requêtes très rapidement, de gérer des collections et de créer des cas de test
-
-
-## Ce qui va être couvert par cette introduction
-- Les requêtes et les collections
-- Le travail collaboratif sur une collection
-- Les différents types de variables et leur portée (scope)
-- Les scripts de pré-requête
-- Les tests (assertions avec [Chai](https://www.chaijs.com/api/))
-- Le Runner
-- Regroupement (guideline) des requetes collection vs test case
-- Les possibilités d'intégration de postman dans un CI/CD
-
-## Ce qui ne va pas être couvert par cette introduction
-- Les serveurs mock
-- La génération de documentation
-- Le monitoring
+Elle permet de créer des requêtes très rapidement, de gérer et maintenir des collections en équipe et de créer des cas de test et scénarios.
+Cette introduction prendra la forme de plusieurs chapitres constitués d'une page chacun et démontrant une notion ou un thème par l'exemple. Une collection et un environnement sont également téléchargeables et importables dans Postman afin que les explications puissent être suivies directement sur l'application de bureau.
 
 ## Pré-requis
 - Avoir téléchargé [Postman](https://www.postman.com/downloads/)
 - Notions basiques de Javascript pour l'écriture des tests
 - Notions basiques du protocole HTTP
 - Notions basiques des APIs RESTful et du cotenu JSON
+
+## Chapitres
+- [Les requêtes et les collections](https://github.com/JNBourrat/postman-intro/blob/master/chapitres/01-requetes_et_collection.md)
+- [Les différents types de variables et leur portée (scope)]()
+- [Le travail collaboratif sur une collection]()
+- [Les scripts de pré-requête]()
+- [Les tests (assertions avec [Chai](https://www.chaijs.com/api/)]()
+- [Le Runner]()
+- [Regroupement (guideline) des requetes collection vs test case]()
+- [Les possibilités d'intégration de postman dans un CI/CD]()
+
+## À venir ?
+- Les serveurs mock
+- La génération de documentation
+- Le monitoring

@@ -40,13 +40,18 @@ Les requêtes peuvent être ensuite regroupées en sous-dossier dans la collecti
 Il existe deux types de collections :
 
 - Les collections dédiées au test d'API. Ces collections sont destinées en général aux développeurs et aux testeurs afin des s'assurer du bon fonctionnement. Elles exploitent les capacités suivantes du logiciel :
+
   - Les scripts (de test et de pré-requête)
   - Le runner et l'automatisation de scénarios
   - Le logging des informations de requête (notamment utile pour débugger lors d'erreurs)
-  
+
 - Les collections dédiées à la documentation. Ces collections sont utilisées afin de communiquer le fonctionnement d'une API avec des exemples de réponses, d'erreur et des descriptions compréhensibles par les utilisateurs potentiels de l'API
 
 Dans cette introduction, nous allons nous pencher sur le premier type de collection, celui destiné au test et au développement d'API.
+
+## **À venir**
+
+---
 
 L'exemple pour ce premier chapitre est très basique afin de comprendre la base d'une requête dans Postman. L'exemple s'étoffera au fur et à mesure de cette introduction avec par exemple des `Path parameters`, des méthodes HTTP différentes, l'ajout de headers, etc.
 Dans le prochain chapitre nous parlerons des [variables et des environnements](02-variables_et_environnement.md).

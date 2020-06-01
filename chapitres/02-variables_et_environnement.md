@@ -8,7 +8,7 @@ Dans postman, les variables se comportent comme dans la majorité des langages d
 
 Dans le cas de Postman, les variables seront toujours stockées sous forme de string qu'il faudra donc éventuellement parser. L'utilisation des variables minimise fortement le risque d'erreur, permet un travail plus efficace notamment dans le cadre de déploiement sur plusieurs environnements et autorise également la création de requêtes dynamiques en fonction du besoin (scénarios particuliers, tests automatisés, authentification, etc).
 
-Dans Postman, on accède à la valeur d'une variable en tapant son nom, entouré de doubles accolades : `{{maVariable}}`. On peut utiliser cette notation dans les URLs, les paramètres, les headers, l'onglet d'authentification (onglet 'Authorization'), les corps (body) des requêtes, les headers pré-enregistrés ("presets headers") ainsi que dans les scripts de pré-requête et les tests. Il existe aussi des variables dites 'dynamiques' proposées par Postman afin de générer des données aléatoires. Elles sont accessibles en ajoutant le préfixe `$` comme par exemple `{{$randomFirstName}}`. La liste complète est sur la page suivante : https://learning.postman.com/docs/postman/variables-and-environments/variables-list/
+Dans Postman, on accède à la valeur d'une variable en tapant son nom, entouré de doubles accolades : `{{maVariable}}`. On peut utiliser cette notation dans les URLs, les paramètres, les headers, l'onglet d'authentification (onglet 'Authorization'), les corps (body) des requêtes, les headers pré-enregistrés ("presets headers") ainsi que dans les scripts de pré-requête et les tests. Il existe aussi des variables dites 'dynamiques' proposées par Postman afin de générer des données aléatoires. Elles sont accessibles en ajoutant le préfixe `$` comme par exemple `{{$randomFirstName}}`. La liste complète est sur la page suivante : <https://learning.postman.com/docs/postman/variables-and-environments/variables-list/>
 
 ---
 
@@ -96,4 +96,8 @@ S'il y a plusieurs scopes disponibles pour déclarer des variables, il y a donc 
 
 ![Variables-Chart.png](/images/chap.2/9-variables-chart.png)
 
-Comme indiqué sur le schéma ci-dessus, Postman expose certaines API telles que `pm.variables.set(...)` et `pm.variables.get(...)` afin d'accéder au contenu des variables depuis les scripts. Nous verrons cela dans le [prochain chapitre consacré aux scripts et aux tests](03-basics-scripts_et_tests.md).
+## **À venir**
+
+---
+
+Comme indiqué sur le schéma ci-dessus, Postman expose certaines API telles que `pm.variables.set(...)` et `pm.variables.get(...)` afin d'accéder au contenu des variables depuis les scripts. Nous verrons cela dans le [prochain chapitre consacré aux scripts et aux tests basiques](03-basics-scripts_et_tests.md).

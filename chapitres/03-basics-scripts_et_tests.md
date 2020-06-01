@@ -1,6 +1,6 @@
 # **Scripts et tests (basique)**
 
-Les scripts dans Postman sont des programmes écrits en Javascript permettant d'effectuer des requêtes dynamiques, d'écrire des scénarios de test, faire transiter de la donnée d'une requête à l'autre par le biais notamment des variables vues dans le chapitre précédent.
+Les scripts dans Postman sont des programmes écrits en Javascript permettant d'effectuer des requêtes dynamiques, d'écrire des scénarios de test et faire transiter de la donnée d'une requête à l'autre par le biais notamment des variables vues dans le chapitre précédent.
 
 ---
 
@@ -55,7 +55,7 @@ Nous pouvons améliorer l'exemple ci-dessus en utilisant la variable déclarée 
 
 ![exemple 3](/images/chap.3/3-exemple3.png)
 
->Notez l'ajout d'un `console.log(pm.response)` qui a été ajouté afin de démontrer l'utilisation de la console Postman. Elle est accessible via un bouton situé en bas à gauche de la fenêtre et s'ouvre dans une fenêtre à part. Elle est très utile pour débugger ou simplement [comprendre les fonctionnalités offertes par Postman](https://learning.postman.com/docs/postman/scripts/postman-sandbox-api-reference/).
+> Notez l'ajout d'un `console.log(pm.response)` afin de démontrer l'utilisation de la console Postman. Elle est accessible via un bouton situé en bas à gauche de la fenêtre et s'ouvre dans une fenêtre à part. Elle est très utile pour débugger ou simplement [comprendre les fonctionnalités offertes par Postman](https://learning.postman.com/docs/postman/scripts/postman-sandbox-api-reference/).
 
 ![console](/images/chap.3/4-console.png)
 
@@ -112,3 +112,10 @@ pm.environment.unset('folderName'); // Supprime la variable d'environnement 'fol
 Si on envoie la requête, on s'aperçoit qu'un test a bien été ajouté au test du dossier.
 
 ![tests-supp](/images/chap.3/8-tests-supp.png)
+
+
+## **À venir**
+
+---
+
+Après avoir vu un exemple basique d'écriture de test, nous allons voir dans le prochain chapitre deux façon différentes pour tester le payload renvoyé par une API : la validation par `pm.expect` et la validation par JSON Schema.

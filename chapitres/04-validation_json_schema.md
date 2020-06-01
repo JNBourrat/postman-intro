@@ -1,4 +1,4 @@
-# **Scripts et tests (avancé)**
+# **Scripts et tests (intermédiaire)**
 
 Afin de valider une réponse, on peut donc -comme expliqué dans le chapitre précédent- parser le corps de la réponse de l'API et, à l'aide d'assertions, tester les attributs qui nous intéressent, leur type, leur valeur, etc. Cependant l'écriture peut rapidement s'avérer fastidieuse dans le cas d'objets complexes ou de tableaux d'objets complexes contenant par exemple eux même des tableaux d'objets complexes.
 

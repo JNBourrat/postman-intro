@@ -116,4 +116,4 @@ Voici pour illustration la dernière requête du dossier `Chapitre 5` de la coll
 
 ---
 
-Dans le prochain chapitre nous allons utiliser Runner Postman afin de lancer automatiquement l'ensemble des requêtes créées jusqu'à maintenant. 
+Dans le prochain chapitre nous allons utiliser Runner Postman afin de lancer automatiquement l'ensemble des requêtes créées jusqu'à maintenant et voir succintement comment.

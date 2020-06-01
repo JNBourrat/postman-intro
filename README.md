@@ -29,14 +29,12 @@ L'API sur laquelle se basera cette introduction est l'API conseillée par Postma
 - [2 - Variables et les environnements](/chapitres/02-variables_et_environnement.md)
 - [3 - Les scripts et les tests (basique)](chapitres/03-basics-scripts_et_tests.md)
 - [4 - Les scripts et les tests (intermédiaire)](chapitres/04-validation_json_schema.md)
-- [4 - Les scripts et les tests (avancé)]()
-- [6 - Le Runner]()
-- [Le travail collaboratif sur une collection]()
-- [Regroupement (guideline) des requetes collection vs test case]()
-- [Les possibilités d'intégration de postman dans un CI/CD et le monitoring]()
+- [5 - Les scripts et les tests (avancé)](chapitres/05-advanced-scripts_et_tests.md)
 
 ## À venir ?
-
-- Les serveurs mock ?
-- La génération de documentation ?
-- Proxy/intercepteurs ?
+- [6 - Le Runner]() ?
+- [7 - Le travail collaboratif sur une collection]() ?
+- [8 - Les possibilités d'intégration de postman dans un CI/CD et le monitoring]() ?
+- [9 - Les serveurs mock ?]() ?
+- [10 - La génération de documentation]() ?
+- [11 - Proxy/intercepteurs ?]() ?

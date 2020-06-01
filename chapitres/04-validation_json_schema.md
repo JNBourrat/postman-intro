@@ -77,7 +77,7 @@ Les scripts de tests peuvent être écrits de façon très lisible et ce grâce 
 
 Pour l'écriture de test plus compliqué, comme nous allons voir plus loin dans cette introduction, la consultation de la documentation de cette librairie n'est pas obligatoire mais peut s'avérer instructive.
 
-Si nous devions tester très basiquement cette réponse par le biais de l'API postman `pm.expect`, le script de test serait de cet acabit (dépend bien-sûr de ce que l'on souhaite tester) :
+Si nous devions tester très basiquement la réponse à notre requête par le biais de l'API postman `pm.expect`, le script de test serait de cet acabit (dépend bien-sûr de ce que l'on souhaite tester) :
 
 ```javascript
 const companyName = pm.variables.get("companyName");
@@ -88,8 +88,7 @@ const parsedBody = pm.response.json();
 
 // Teste le type et la valeur de l'attribut 'url' de la réponse
 pm.test(
-  `Response should contain a url 'string' attribute: "${baseUrl}/post"`,
-  function () {
+  `Response should contain a url 'string' attribute: "${baseUrl}/post"`, function () {
     pm.expect(parsedBody.url).to.be.a("string").that.is.eql(`${baseUrl}/post`);
   }
 );
@@ -99,15 +98,13 @@ pm.test(`Response should contain a data 'object' attribute`, function () {
 });
 
 pm.test(
-  `Response data should have a companyName attribute: "${companyName}"`,
-  function () {
+  `Response data should have a companyName attribute: "${companyName}"`, function () {
     pm.expect(parsedBody.data.companyName).to.eql(companyName);
   }
 );
 
 pm.test(
-  `Response data should have a non-empty 'employees' attribute of type 'array'`,
-  function () {
+  `Response data should have a non-empty 'employees' attribute of type 'array'`, function () {
     pm.expect(parsedBody.data.employees).to.be.an("array").that.is.not.empty;
   }
 );
@@ -220,8 +217,7 @@ const postCompanySchema = {
 };
 
 pm.test(
-  `Response body should be validated by schema '${postCompanySchema.title}'`,
-  function () {
+  `Response body should be validated by schema '${postCompanySchema.title}'`, function () {
     pm.response.to.have.jsonSchema(postCompanySchema);
   }
 );

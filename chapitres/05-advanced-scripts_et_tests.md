@@ -107,3 +107,13 @@ eval(globals.testGetStatusResponse)(requestedStatus);
 Si le modèle de retour de l'API `GET https://postman-echo.com/status/<code>` vient à changer, il n'y aura alors qu'un seul endroit où changer le schéma.
 
 On peut bien entendu aller beaucoup plus loin dans la mutualisation des tests et implémenter des fonctions beaucoup plus dynamique comme par exemple une fonction de validation "générique" des schémas, prenant en paramètre le nom d'un schéma et allant récupérer le schéma à valider dans les variables d'environnement, et bien d'autres cas !
+
+Voici pour illustration la dernière requête du dossier `Chapitre 5` de la collection `Introduction à Postman`, lancée et montrant les résultats de test dans le panel du bas :
+
+![dernière reaquête chapitre 5](/images/chap.5/3-dry_1.png)
+
+## À venir
+
+---
+
+Dans le prochain chapitre nous allons utiliser Runner Postman afin de lancer automatiquement l'ensemble des requêtes créées jusqu'à maintenant. 

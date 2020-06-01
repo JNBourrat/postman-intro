@@ -93,7 +93,7 @@ Si on envoie la première requête présente dans ce dossier, on s'aperçoit que
 
 ![scripts vide](/images/chap.3/7-scripts-vides.png)
 
-Cependant, outre la consultation de la console Postman, on ne s'assure à aucun moment que la valeur envoyée lors de la requête soit correct. Pour cela, on va créer une seconde requête mais cette fois-ci en testant la valeur reçus dans le body de la réponse de l'API grâce au code suivant :
+Cependant, outre la consultation de la console Postman, on ne s'assure à aucun moment que la valeur envoyée lors de la requête soit correct. Pour cela nous allons créer une seconde requête mais cette fois-ci en testant la valeur reçu dans le body de la réponse de l'API grâce au code suivant :
 
 ```javascript
 // ------------- Onglet "Tests" -------------

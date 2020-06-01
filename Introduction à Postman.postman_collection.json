@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "39a42561-72cc-4fa6-b972-f497abddeeec",
-		"name": " [Apside] Introduction à Postman",
+		"name": "Introduction à Postman",
 		"description": "# Introduction à Postman\r\n\r\n## Pourquoi Postman ?\r\n\r\nLes API font partie intégrante du travail de tout développeur web et une chose est sûre : elles sont de plus en plus nombreuses et de plus en plus complexes avec une multitude de façon de s'y authentifier (Oauth, clé API, token), de headers à gérer, de cookies, d'environnements (local, développement, intégration, recette, production), etc.\r\n\r\nAvant de commencer le développement et de coder un quelconque connecteur à une API tierce pour une nouvelle fonctionnalité dans votre application, il peut être très avantageux de s'assurer du bon fonctionnement de la-dite API.\r\nDans une optique similaire, pour notre propre API cette fois-ci, on peut imaginer un processus de conception & développement dans lequel l'ensemble des requêtes nécessaires à la création d'une nouvelle fonctionnalité soit créées en amont du développement avec des tests afin de valider les signatures et la sécurité des endpoints.\r\n\r\nPlusieurs solutions sont disponibles : [Insomnia](https://insomnia.rest/), [l'extension VSCode \"REST Client\"](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), [Paw](https://paw.cloud/)...\r\nL'une des applications les plus populaires, et celle sur laquelle nous allons nous pencher est [Postman](https://www.postman.com/downloads/).\r\nElle permet de créer des requêtes très rapidement, de gérer et maintenir des collections en équipe et de créer des cas de test et scénarios.\r\n\r\nCette introduction prendra la forme de plusieurs chapitres constitués d'une page chacun et démontrant une notion ou un thème par l'exemple. Une collection et un environnement sont également téléchargeables et importables dans Postman afin que les explications puissent être suivies directement sur l'application de bureau.\r\n\r\nL'API sur laquelle se basera cette introduction est l'API conseillée par Postman pour tester l'outil et sa documentation se trouve ici : https://postman-echo.com\r\n\r\n## Pré-requis\r\n\r\n- Avoir téléchargé [Postman](https://www.postman.com/downloads/)\r\n- Notions basiques de Javascript pour l'écriture des tests\r\n- Notions basiques du protocole HTTP\r\n- Notions basiques des APIs RESTful et du cotenu JSON",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -51,7 +51,7 @@
 			"name": "Chapitre 2 - Variables et environnement",
 			"item": [
 				{
-					"name": "1 - Requête avec une url \"variablilisée\"",
+					"name": "1 - Requête avec une url \"variabilisée\"",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -278,6 +278,16 @@
 								"id": "cfac0e3b-59fb-4b71-9a67-a6527aec5e39",
 								"exec": [
 									"pm.variables.set('statusCodeToReceive', 201);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "49f972ab-b69c-4bb5-a3e4-94ce49a9289b",
+								"exec": [
+									"pm.variables.unset('statusCodeToReceive');"
 								],
 								"type": "text/javascript"
 							}
@@ -1090,1089 +1100,143 @@
 			"name": "Chapitre 6 - Runner (basique)",
 			"item": [
 				{
-					"name": "Chapitre 1 - Première requête Copy",
-					"item": [
-						{
-							"name": "Première requête",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://postman-echo.com/get?entity=users&sort=username",
-									"protocol": "https",
-									"host": [
-										"postman-echo",
-										"com"
-									],
-									"path": [
-										"get"
-									],
-									"query": [
-										{
-											"key": "entity",
-											"value": "users"
-										},
-										{
-											"key": "sort",
-											"value": "username"
-										},
-										{
-											"key": "page",
-											"value": "1",
-											"disabled": true
-										}
-									]
-								},
-								"description": "[Lire le chapitre 1 sur github](https://github.com/JNBourrat/postman-intro/blob/master/chapitres/01-requetes_et_collection.md)"
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Chapitre 2 - Variables et environnement Copy",
-					"item": [
-						{
-							"name": "1 - Requête avec une url \"variablilisée\"",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/get?entity=users&sort=username",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"get"
-									],
-									"query": [
-										{
-											"key": "entity",
-											"value": "users"
-										},
-										{
-											"key": "sort",
-											"value": "username"
-										},
-										{
-											"key": "page",
-											"value": "1",
-											"disabled": true
-										}
-									]
-								},
-								"description": "[Lire le chapitre 2 sur github](https://github.com/JNBourrat/postman-intro/blob/master/chapitres/02-variables_et_environnement.md)"
-							},
-							"response": []
-						},
-						{
-							"name": "2 - Scope de la variable \"userName\"",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"companyName\": \"Apside\",\n\t\"userName\": \"{{userName}}\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/post",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"post"
-									]
-								},
-								"description": "Pour tester :\r\n- Décocher la variable d'environnement `userName` de l'environnement `[Env A] Postman Echo`\r\n- Déclarer une variable \"globale\" grâce à l'outil de gestion rapide des environnements en cliquant sur le symbôle de l'oeil en haut à droite de la fenêtre puis sur le bouton `Edit` en face de la section `Globals`\r\n- Affecter la valeur \"Dupont\" à une variable globale `userName`  puis enregistrer\r\n- Envoyer la requête, vérifier la valeur envoyée grâce au body de la réponse\r\n- Cocher la variable d'environnement `userName`\r\n- Envoyer la requête, vérifier la valeur envoyée grâce au body de la réponse"
-							},
-							"response": []
-						}
-					],
+					"name": "1 - Antépénultième requête du runner",
 					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "2767b0f8-24ca-4278-863e-1f84caa5ec42",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
 						{
 							"listen": "test",
 							"script": {
-								"id": "fdbbd196-9f29-40ee-a477-7683ea735ac4",
-								"type": "text/javascript",
+								"id": "ecb98c60-e7ca-4a1f-849c-1fad2c0d779b",
 								"exec": [
-									""
-								]
+									"const requestedStatus = pm.variables.get('requestedStatus');\r",
+									"\r",
+									"eval(globals.testGetStatusResponse)(requestedStatus, 500);\r",
+									"\r",
+									"pm.globals.unset('testGetStatusResponse');\r",
+									"\r",
+									"console.log('Log depuis la requête 1 du chapitre 6 ==> Antépénultième requête en mode automatique', \"Calling postman.setNextRequest('3 - Avant-dernière requête du runner')\");\r",
+									"postman.setNextRequest('3 - Avant-dernière requête du runner');"
+								],
+								"type": "text/javascript"
 							}
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Chapitre 3 - Scripts et tests (basique) Copy",
-					"item": [
-						{
-							"name": "4 - Mutualisation des scripts",
-							"item": [
-								{
-									"name": "1 - Requête avec des scripts vides",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "53ada6f7-7a4e-4dd5-b45b-ef6e14506a8e",
-												"exec": [
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"request": {
-										"method": "PUT",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"folder\": \"{{folderName}}\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/put",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"put"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "2 - Requête avec des tests supplémentaires",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "8e31f451-fa95-4712-b0d8-a505f6e83ae2",
-												"exec": [
-													"const folderName = pm.variables.get('folderName'); // Récupère la valeur de la variable 'folderName' dans le scope le plus restreint (ici environment)\r",
-													"\r",
-													"const parsedBody = pm.response.json(); // Récupère le body de la réponse au format JSON\r",
-													"\r",
-													"pm.test(`Response should have the correct folder name: \"${folderName}\"`, function () {\r",
-													"    pm.expect(parsedBody.data.folder).to.eql(folderName);\r",
-													"});\r",
-													"\r",
-													"pm.environment.unset('folderName'); // Supprime la variable d'environnement 'folderName' car c'est le dernier test à l'utiliser"
-												],
-												"type": "text/javascript"
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "190fcf56-f071-4aab-9747-ed79194d4a73",
-												"exec": [
-													""
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"request": {
-										"method": "PUT",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"folder\": \"{{folderName}}\"\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{baseUrl}}/put",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"put"
-											]
-										}
-									},
-									"response": []
-								}
-							],
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "e9f9619e-441a-4576-9292-8b724a4073dd",
-										"type": "text/javascript",
-										"exec": [
-											"const folderName = '4 - Mutualisation des scripts';",
-											"",
-											"pm.environment.set('folderName', folderName);",
-											"",
-											"console.log(`Nous avons initialisé la variable 'folderName' dans le script de pré-requête du dossier \"${folderName}\"`);"
-										]
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "b6352803-44bb-4165-b355-df0346f8047e",
-										"type": "text/javascript",
-										"exec": [
-											"const folderName = pm.variables.get('folderName');",
-											"",
-											"pm.test(`Response status should be 200`, () => {",
-											"    pm.response.to.have.status(200);",
-											"});"
-										]
-									}
-								}
-							],
-							"protocolProfileBehavior": {},
-							"_postman_isSubFolder": true
 						},
-						{
-							"name": "1 - Script de pré-requête",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "9f9da172-a0c8-4fc5-a92c-e9491303a665",
-										"exec": [
-											"pm.variables.set('statusCodeToReceive', 201);"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/status/{{statusCodeToReceive}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"status",
-										"{{statusCodeToReceive}}"
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "1",
-											"disabled": true
-										}
-									]
-								},
-								"description": "[Lire le chapitre 3 complet sur github](https://github.com/JNBourrat/postman-intro/blob/master/chapitres/03-basics-scripts_et_tests.md)"
-							},
-							"response": []
-						},
-						{
-							"name": "2 - Script de test",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "69cafa50-3b62-4aed-a75f-9c6f57913e5e",
-										"exec": [
-											"pm.variables.set('statusCodeToReceive', 401);"
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "a30078c1-4daf-404c-ac65-6f956f558fe4",
-										"exec": [
-											"pm.test(\"Status should be '401'\", function () {\r",
-											"    pm.response.to.have.status(401);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Failing test\", function () {\r",
-											"    pm.expect(pm.response.code).to.equal(402);\r",
-											"});\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/status/{{statusCodeToReceive}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"status",
-										"{{statusCodeToReceive}}"
-									],
-									"query": [
-										{
-											"key": "page",
-											"value": "1",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "3 - Utiliser une variable dans un script",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "2c1e04df-df29-4899-b3f7-f772f5870439",
-										"exec": [
-											"pm.variables.set('statusCodeToReceive', 504);"
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "9c07c3c6-90af-4e1a-b106-336eb6ff8009",
-										"exec": [
-											"const statusCodeToReceive = pm.variables.get('statusCodeToReceive');\r",
-											"\r",
-											"pm.test(`Status should be ${statusCodeToReceive}`, function () {\r",
-											"    pm.response.to.have.status(statusCodeToReceive);\r",
-											"});\r",
-											"\r",
-											"console.log('========= Chapitre 3, exemple 3 ==========')\r",
-											"console.log(pm.response);"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/status/{{statusCodeToReceive}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"status",
-										"{{statusCodeToReceive}}"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Chapitre 4 - Scripts et tests (intermédiaire) Copy",
-					"item": [
-						{
-							"name": "1 - Validation par \"pm.expect\"",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "f05500d2-0ebe-44c0-b290-e4f2b0bf4d7d",
-										"exec": [
-											"pm.variables.set('companyName', 'Nom de ma société');"
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "b8e2e681-b7d3-4f88-850d-ba305011d3cc",
-										"exec": [
-											"const companyName = pm.variables.get('companyName');\r",
-											"const userName = pm.variables.get('userName');\r",
-											"const baseUrl = pm.variables.get('baseUrl');\r",
-											"\r",
-											"const parsedBody = pm.response.json();\r",
-											"\r",
-											"// Teste le type et la valeur de l'attribut 'url' de la réponse\r",
-											"pm.test(`Response should contain a url 'string' attribute: \"${baseUrl}/post\"`, function () {\r",
-											"    pm.expect(parsedBody.url).to.be.a('string').that.is.eql(`${baseUrl}/post`);\r",
-											"});\r",
-											"\r",
-											"pm.test(`Response should contain a data 'object' attribute`, function () {\r",
-											"    pm.expect(parsedBody.data).to.be.an('object').that.is.not.empty;\r",
-											"});\r",
-											"\r",
-											"pm.test(`Response data should have a companyName attribute: \"${companyName}\"`, function () {\r",
-											"    pm.expect(parsedBody.data.companyName).to.eql(companyName);\r",
-											"});\r",
-											"\r",
-											"pm.test(`Response data should have a non-empty 'employees' attribute of type 'array'`, function () {\r",
-											"    pm.expect(parsedBody.data.employees).to.be.an('array').that.is.not.empty;\r",
-											"});\r",
-											"\r",
-											"pm.test(`Response data employees should all be of type object, have a lastName and a position attributes that are string and if annualIncome is present, it should be a number over 18,473 €`, function () {\r",
-											"    const employees = parsedBody.data.employees;\r",
-											"    console.log('Employees list: \\n', employees);\r",
-											"\r",
-											"    for (employee of employees) {\r",
-											"        pm.expect(employee).to.be.an('object');\r",
-											"        pm.expect(employee).to.have.property('lastName')\r",
-											"        pm.expect(employee).to.have.property('position');\r",
-											"        pm.expect(employee.lastName).to.be.a('string');\r",
-											"        pm.expect(employee.position).to.be.a('string');\r",
-											"        if (employee.annualIncome) {\r",
-											"            pm.expect(employee.annualIncome).to.be.a('number').above(18473);\r",
-											"        }\r",
-											"    }\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"companyName\": \"{{companyName}}\",\n\t\"employees\": [\n\t\t{\n\t\t\t\"lastName\": \"{{userName}}\",\n\t\t\t\"position\": \"Web developer\",\n\t\t\t\"annualIncome\": 27000\n\t\t},\n\t\t{\n\t\t\t\"lastName\": \"Dupont\",\n\t\t\t\"position\": \"CTO\",\n\t\t\t\"annualIncome\": 50000\n\t\t},\n\t\t{\n\t\t\t\"lastName\": \"Martin\",\n\t\t\t\"position\": \"Janitor\",\n\t\t\t\"annualIncome\": 19000\n\t\t},\n\t\t{\n\t\t\t\"lastName\": \"Morand\",\n\t\t\t\"position\": \"Scrum master\"\n\t\t}\n\t]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/post",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"post"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "2 - Validation par JSON Schema",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "a194db99-d39a-4a25-9b26-9fe968470c2e",
-										"exec": [
-											"const baseUrl = pm.variables.get('baseUrl');\r",
-											"\r",
-											"const postCompanySchema = {\r",
-											"  \"title\": \"Post Company with Employees Schema\",\r",
-											"  \"type\": \"object\",\r",
-											"  \"properties\": {\r",
-											"    \"args\": {\r",
-											"      \"type\": \"object\"\r",
-											"    },\r",
-											"    \"data\": {\r",
-											"      \"type\": \"object\",\r",
-											"      \"properties\": {\r",
-											"        \"companyName\": {\r",
-											"          \"type\": \"string\"\r",
-											"        },\r",
-											"        \"employees\": {\r",
-											"          \"type\": \"array\",\r",
-											"          \"items\": {\r",
-											"            \"type\": \"object\",\r",
-											"            \"properties\": {\r",
-											"              \"lastName\": {\r",
-											"                \"type\": \"string\"\r",
-											"              },\r",
-											"              \"position\": {\r",
-											"                \"type\": \"string\"\r",
-											"              },\r",
-											"              \"annualIncome\": {\r",
-											"                \"type\": \"number\",\r",
-											"                \"minimum\": 18473\r",
-											"              }\r",
-											"            },\r",
-											"            \"additionalProperties\": false,\r",
-											"            \"required\": [\r",
-											"              \"lastName\",\r",
-											"              \"position\"\r",
-											"            ]\r",
-											"          }\r",
-											"        }\r",
-											"      },\r",
-											"      \"required\": [\r",
-											"        \"companyName\",\r",
-											"        \"employees\"\r",
-											"      ],\r",
-											"    },\r",
-											"    \"files\": {\r",
-											"      \"type\": \"object\"\r",
-											"    },\r",
-											"    \"form\": {\r",
-											"      \"type\": \"object\"\r",
-											"    },\r",
-											"    \"headers\": {\r",
-											"      \"type\": \"object\"\r",
-											"    },\r",
-											"    \"url\": {\r",
-											"      \"type\": \"string\",\r",
-											"      \"enum\": [`${baseUrl}/post`]\r",
-											"    }\r",
-											"  },\r",
-											"  \"required\": [\r",
-											"    \"data\",\r",
-											"    \"headers\",\r",
-											"    \"url\"\r",
-											"  ]\r",
-											"};\r",
-											"\r",
-											"pm.test(`Response body should be validated by schema '${postCompanySchema.title}'`, function () {\r",
-											"    pm.response.to.have.jsonSchema(postCompanySchema);\r",
-											"});\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "8b20241f-c888-4e37-9526-750f4cd5afad",
-										"exec": [
-											"pm.variables.set('companyName', 'Nom de ma société');"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"companyName\": \"{{companyName}}\",\n\t\"employees\": [\n\t\t{\n\t\t\t\"lastName\": \"{{userName}}\",\n\t\t\t\"position\": \"Web developer\",\n\t\t\t\"annualIncome\": 27000\n\t\t},\n\t\t{\n\t\t\t\"lastName\": \"Dupont\",\n\t\t\t\"position\": \"CTO\",\n\t\t\t\"annualIncome\": 50000\n\t\t},\n\t\t{\n\t\t\t\"lastName\": \"Martin\",\n\t\t\t\"position\": \"Janitor\",\n\t\t\t\"annualIncome\": 19000\n\t\t},\n\t\t{\n\t\t\t\"lastName\": \"Morand\",\n\t\t\t\"position\": \"Scrum master\"\n\t\t}\n\t]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/post",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"post"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "3 - Réutilisation de JSON Schema",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "d4bfaa18-56de-47b4-a6ea-1e3bd6d3ecb7",
-										"exec": [
-											"const postCompanySchema =  JSON.parse(pm.environment.get('postCompanySchema')); // il faut parser le contenu de la variable car on ne peut pas stocker de valeur autrement qu'en string\r",
-											"\r",
-											"pm.test(`Response body should be validated by schema '${postCompanySchema.title}'`, function () {\r",
-											"    pm.response.to.have.jsonSchema(postCompanySchema);\r",
-											"});\r",
-											"\r",
-											"// Bonne pratique : toujours supprimer une variable d'environnement après sa dernière utilisation\r",
-											"// Pour voir appraître le schéma en variable d'environnement, il suffit de commenter cette ligne, de relancer la requête et de cliquer sur l'oeil en haut à droite de la fenêtre, à côté du sélecteur d'environnement\r",
-											"pm.environment.unset('postCompanySchema');\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "f0056f61-e9fe-4309-b8f2-3ade66fe82f0",
-										"exec": [
-											"pm.variables.set('companyName', 'Nom de ma société');"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"companyName\": \"{{companyName}}\",\n\t\"employees\": [\n\t\t{\n\t\t\t\"lastName\": \"{{userName}}\",\n\t\t\t\"position\": \"Web developer\",\n\t\t\t\"annualIncome\": 27000\n\t\t},\n\t\t{\n\t\t\t\"lastName\": \"Dupont\",\n\t\t\t\"position\": \"CTO\",\n\t\t\t\"annualIncome\": 50000\n\t\t},\n\t\t{\n\t\t\t\"lastName\": \"Martin\",\n\t\t\t\"position\": \"Janitor\",\n\t\t\t\"annualIncome\": 19000\n\t\t},\n\t\t{\n\t\t\t\"lastName\": \"Morand\",\n\t\t\t\"position\": \"Scrum master\"\n\t\t}\n\t]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/post",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"post"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8a99a3f4-73f0-4879-87fa-549f1ac8f9ee",
-								"type": "text/javascript",
+								"id": "93a1f4d6-7709-48a2-b3e9-013b2cf4f83b",
 								"exec": [
-									"const baseUrl = pm.variables.get('baseUrl');",
-									"",
-									"const postCompanySchema = {",
-									"  \"title\": \"Post Company with Employees Schema\",",
-									"  \"type\": \"object\",",
-									"  \"properties\": {",
-									"    \"args\": {",
-									"      \"type\": \"object\"",
-									"    },",
-									"    \"data\": {",
-									"      \"type\": \"object\",",
-									"      \"properties\": {",
-									"        \"companyName\": {",
-									"          \"type\": \"string\"",
-									"        },",
-									"        \"employees\": {",
-									"          \"type\": \"array\",",
-									"          \"items\": {",
-									"            \"type\": \"object\",",
-									"            \"properties\": {",
-									"              \"lastName\": {",
-									"                \"type\": \"string\"",
-									"              },",
-									"              \"position\": {",
-									"                \"type\": \"string\"",
-									"              },",
-									"              \"annualIncome\": {",
-									"                \"type\": \"number\",",
-									"                \"minimum\": 18473",
-									"              }",
-									"            },",
-									"            \"additionalProperties\": false,",
-									"            \"required\": [",
-									"              \"lastName\",",
-									"              \"position\"",
-									"            ]",
-									"          }",
-									"        }",
-									"      },",
-									"      \"required\": [",
-									"        \"companyName\",",
-									"        \"employees\"",
-									"      ],",
-									"    },",
-									"    \"files\": {",
-									"      \"type\": \"object\"",
-									"    },",
-									"    \"form\": {",
-									"      \"type\": \"object\"",
-									"    },",
-									"    \"headers\": {",
-									"      \"type\": \"object\"",
-									"    },",
-									"    \"url\": {",
-									"      \"type\": \"string\",",
-									"      \"enum\": [`${baseUrl}/post`]",
-									"    }",
-									"  },",
-									"  \"required\": [",
-									"    \"data\",",
-									"    \"headers\",",
-									"    \"url\"",
-									"  ]",
-									"};",
-									"",
-									"pm.environment.set('postCompanySchema', JSON.stringify(postCompanySchema));"
-								]
+									"pm.variables.set('requestedStatus', 505);"
+								],
+								"type": "text/javascript"
 							}
-						},
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/status/{{requestedStatus}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"status",
+								"{{requestedStatus}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2 - Dernière requête du runner",
+					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "3876fb83-659b-4395-bec6-27b042d96447",
-								"type": "text/javascript",
+								"id": "bdc8a638-7af8-4013-8011-f53797a369eb",
 								"exec": [
-									""
-								]
+									"const requestedStatus = pm.variables.get('requestedStatus');\r",
+									"eval(globals.testGetStatusResponse)(requestedStatus, 500);\r",
+									"pm.globals.unset('testGetStatusResponse');\r",
+									"\r",
+									"console.log('Log depuis la requête 2 du chapitre 6 ==> Dernière requête du runner', \"Calling postman.setNextRequest(null)\");\r",
+									"postman.setNextRequest(null);"
+								],
+								"type": "text/javascript"
 							}
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Chapitre 5 - Scripts et tests (avancé) Copy",
-					"item": [
-						{
-							"name": "1 - Réutilisation de code Javascript",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "c102c15c-710e-4393-be71-d142d22254f3",
-										"exec": [
-											"const requestedStatus = pm.variables.get('requestedStatus');\r",
-											"const maxResponseTime = 200;\r",
-											"const statusSchema = {\r",
-											"    \"title\": `GET Status Schema for status ${requestedStatus}`,\r",
-											"    \"type\": \"object\",\r",
-											"    \"properties\": {\r",
-											"        \"status\": {\r",
-											"            \"type\": \"number\",\r",
-											"            \"minimum\": requestedStatus,\r",
-											"            \"maximum\": requestedStatus,\r",
-											"        }\r",
-											"    },\r",
-											"    \"additionalProperties\": false,\r",
-											"    \"required\": [\r",
-											"        \"status\"\r",
-											"    ]\r",
-											"}\r",
-											"\r",
-											"pm.test(`Status should be '${requestedStatus}'`, function () {\r",
-											"    pm.response.to.have.status(requestedStatus);\r",
-											"});\r",
-											"\r",
-											"pm.test(`Response body should validate JSON Schema '${statusSchema.title}'`, function () {\r",
-											"    pm.response.to.have.jsonSchema(statusSchema);\r",
-											"});\r",
-											"\r",
-											"pm.test(`Response time is less than ${maxResponseTime}ms`, function () {\r",
-											"    pm.expect(pm.response.responseTime).to.be.below(maxResponseTime);\r",
-											"});\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "229f03f3-bb19-4f19-94fe-68836e62bc82",
-										"exec": [
-											"pm.variables.set('requestedStatus', 501);"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/status/{{requestedStatus}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"status",
-										"{{requestedStatus}}"
-									]
-								}
-							},
-							"response": []
 						},
-						{
-							"name": "2 - DRY (code 201)",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "73aac97b-52e5-459c-a375-2b531aedd839",
-										"exec": [
-											"const requestedStatus = pm.variables.get('requestedStatus');\r",
-											"\r",
-											"eval(globals.testGetStatusResponse)(requestedStatus);\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "91da6330-10fd-4bb7-89b8-8940a3349503",
-										"exec": [
-											"pm.variables.set('requestedStatus', 201);"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/status/{{requestedStatus}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"status",
-										"{{requestedStatus}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "3 - DRY (code 301)",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "4be59977-45ca-4906-a2d2-955a80de9522",
-										"exec": [
-											"const requestedStatus = pm.variables.get('requestedStatus');\r",
-											"\r",
-											"eval(globals.testGetStatusResponse)(requestedStatus);\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "29467f21-6194-487c-ae23-6de5d242bc7c",
-										"exec": [
-											"pm.variables.set('requestedStatus', 301);"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/status/{{requestedStatus}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"status",
-										"{{requestedStatus}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "4 - DRY (code 401)",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "e2c97787-b89f-44e3-8c74-fff5596ce117",
-										"exec": [
-											"const requestedStatus = pm.variables.get('requestedStatus');\r",
-											"\r",
-											"eval(globals.testGetStatusResponse)(requestedStatus);\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "e3c0702a-8939-4300-8f72-0fe62aaed8c8",
-										"exec": [
-											"pm.variables.set('requestedStatus', 401);"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/status/{{requestedStatus}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"status",
-										"{{requestedStatus}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "5 - DRY (code 501)",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "0fc6b636-3609-4f1e-aeb2-53477b8e9356",
-										"exec": [
-											"const requestedStatus = pm.variables.get('requestedStatus');\r",
-											"\r",
-											"eval(globals.testGetStatusResponse)(requestedStatus);\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "b36a9818-f992-43f5-baf4-7b043a1a0faf",
-										"exec": [
-											"pm.variables.set('requestedStatus', 501);"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/status/{{requestedStatus}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"status",
-										"{{requestedStatus}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "6 - DRY (code 510)",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "129ccc59-9b72-4bc2-ab64-3c20f9b3ec5c",
-										"exec": [
-											"pm.variables.set('requestedStatus');"
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "7f511623-e636-40f1-a94c-4fdaf68fad50",
-										"exec": [
-											"const requestedStatus = pm.variables.get('requestedStatus');\r",
-											"\r",
-											"eval(globals.testGetStatusResponse)(requestedStatus, 600);\r",
-											"\r",
-											"pm.globals.unset('testGetStatusResponse');\r",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/status/{{requestedStatus}}",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"status",
-										"{{requestedStatus}}"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8788e5bf-5daf-475c-8573-7dc823b98f88",
-								"type": "text/javascript",
+								"id": "e178cf03-6d80-4e2f-93cc-c2be023f46bf",
 								"exec": [
-									"const responseStatus = {",
-									"  \"title\": \"Response with status number\",",
-									"  \"type\": \"object\",",
-									"  \"properties\": {",
-									"    \"status\": {",
-									"      \"type\": \"number\"",
-									"    }",
-									"  }",
-									"};",
-									"",
-									"pm.environment.set('postCompanySchema', JSON.stringify(responseStatus));"
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "ca0650be-3796-467a-badf-9d0286ef6388",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
+									"pm.variables.set('requestedStatus', 506);"
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/status/{{requestedStatus}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"status",
+								"{{requestedStatus}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3 - Avant-dernière requête du runner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "480c8338-245c-485a-8158-cdab7f668ebb",
+								"exec": [
+									"const requestedStatus = pm.variables.get('requestedStatus');\r",
+									"\r",
+									"eval(globals.testGetStatusResponse)(requestedStatus, 500);\r",
+									"\r",
+									"pm.globals.unset('testGetStatusResponse');\r",
+									"\r",
+									"console.log('Log depuis la requête 3 du chapitre 6  ==> Avant-dernière requête en mode automatique', \"Calling postman.setNextRequest('2 - Dernière requête du runner')\");\r",
+									"postman.setNextRequest('2 - Dernière requête du runner');"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e35e36d2-d899-49c4-9f2e-1348caccc1aa",
+								"exec": [
+									"pm.variables.set('requestedStatus', 507);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/status/{{requestedStatus}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"status",
+								"{{requestedStatus}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -2202,7 +1266,7 @@
 					"        ]",
 					"    }",
 					"",
-					"    pm.test(`Status should be '${requestedStatus}'`, function () {",
+					"    pm.test(`Response status should be '${requestedStatus}'`, function () {",
 					"        pm.response.to.have.status(requestedStatus);",
 					"    });",
 					"",

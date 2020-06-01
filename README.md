@@ -2,6 +2,8 @@
 
 ## Pourquoi Postman ?
 
+---
+
 Les API font partie intégrante du travail de tout développeur web et une chose est sûre : elles sont de plus en plus nombreuses et de plus en plus complexes avec une multitude de façon de s'y authentifier (Oauth, clé API, token), de headers à gérer, de cookies, d'environnements (local, développement, intégration, recette, production), etc.
 
 Avant de commencer le développement et de coder un quelconque connecteur à une API tierce pour une nouvelle fonctionnalité dans votre application, il peut être très avantageux de s'assurer du bon fonctionnement de la-dite API.
@@ -17,6 +19,8 @@ L'API sur laquelle se basera cette introduction est l'API conseillée par Postma
 
 ## Pré-requis
 
+---
+
 - Avoir téléchargé [Postman](https://www.postman.com/downloads/)
 - Notions basiques de Javascript pour l'écriture des tests
 - Notions basiques du protocole HTTP
@@ -24,15 +28,20 @@ L'API sur laquelle se basera cette introduction est l'API conseillée par Postma
 
 ## Chapitres
 
+---
+
 - [0 - Comment importer la collection et l'environnement de cette introduction](/chapitres/00-importer_collection_et_environnement.md)
 - [1 - Requêtes et collections](/chapitres/01-requetes_et_collection.md)
 - [2 - Variables et les environnements](/chapitres/02-variables_et_environnement.md)
 - [3 - Les scripts et les tests (basique)](chapitres/03-basics-scripts_et_tests.md)
 - [4 - Les scripts et les tests (intermédiaire)](chapitres/04-validation_json_schema.md)
 - [5 - Les scripts et les tests (avancé)](chapitres/05-advanced-scripts_et_tests.md)
+- [6 - Le Runner](chapitres/06-runner.md)
 
 ## À venir ?
-- [6 - Le Runner]() ?
+
+---
+
 - [7 - Le travail collaboratif sur une collection]() ?
 - [8 - Les possibilités d'intégration de postman dans un CI/CD et le monitoring]() ?
 - [9 - Les serveurs mock ?]() ?

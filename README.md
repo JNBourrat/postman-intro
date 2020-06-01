@@ -26,14 +26,14 @@ L'API sur laquelle se basera cette introduction est l'API conseillée par Postma
 
 - [Requêtes et les collections](/chapitres/01-requetes_et_collection.md)
 - [Variables et les environnements](/chapitres/02-variables_et_environnement.md)
-- [Les scripts de pré-requête]()
-- [Les tests]()(assertions avec [Chai](https://www.chaijs.com/api/)
+- [Les scripts et les tests (basique)](chapitres/03-basics-scripts_et_tests.md)
 - [Le Runner]()
 - [Le travail collaboratif sur une collection]()
 - [Regroupement (guideline) des requetes collection vs test case]()
 - [Les possibilités d'intégration de postman dans un CI/CD]()
 
 ## À venir ?
+
 - Les serveurs mock
 - La génération de documentation
 - Le monitoring

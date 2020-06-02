@@ -32,7 +32,7 @@ L'API sur laquelle se basera cette introduction est l'API conseillée par Postma
 
 - [0 - Comment importer la collection et l'environnement de cette introduction](/chapitres/00-importer_collection_et_environnement.md)
 - [1 - Requêtes et collections](/chapitres/01-requetes_et_collection.md)
-- [2 - Variables et les environnements](/chapitres/02-variables_et_environnement.md)
+- [2 - Variables et environnements](/chapitres/02-variables_et_environnement.md)
 - [3 - Les scripts et les tests (basique)](chapitres/03-basics-scripts_et_tests.md)
 - [4 - Les scripts et les tests (intermédiaire)](chapitres/04-validation_json_schema.md)
 - [5 - Les scripts et les tests (avancé)](chapitres/05-advanced-scripts_et_tests.md)

@@ -23,8 +23,8 @@ L'API sur laquelle se basera cette introduction est l'API conseillée par Postma
 
 - Avoir téléchargé [Postman](https://www.postman.com/downloads/)
 - Notions basiques de Javascript pour l'écriture des tests
-- Notions basiques du protocole HTTP
-- Notions basiques des APIs RESTful et du cotenu JSON
+- Notions basiques du [protocole HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- Notions basiques des [APIs RESTful](https://developer.mozilla.org/en-US/docs/Glossary/REST) et du [format JSON](https://www.w3schools.com/whatis/whatis_json.asp)
 
 ## Chapitres
 
